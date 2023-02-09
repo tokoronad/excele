@@ -64,21 +64,21 @@ INPUTS.forEach(function(elm) {
     Object.defineProperty(DATA, elm.id, {get:getter});
     Object.defineProperty(DATA, elm.id.toLowerCase(), {get:getter});
 });
-
+(window.computeAll = function() {
+    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]+DATA[elm.id]; } catch(e) {} });
+})
 
 (window.computeAll = function() {
     INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]*DATA[elm.id]; } catch(e) {} });
 })
 (window.computeAll = function() {
-    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]/DATA[elm.id]; } catch(e) {} });
-})
-(window.computeAll = function() {
-    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]+DATA[elm.id]; } catch(e) {} });
+    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]; } catch(e) {} });
 })
 (window.computeAll = function() {
     INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]-DATA[elm.id]; } catch(e) {} });
 })
 (window.computeAll = function() {
-    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]; } catch(e) {} });
-})();
+    INPUTS.forEach(function(elm) { try { elm.value = DATA[elm.id]/DATA[elm.id]; } catch(e) {} });
+})
+();
 </script>
